@@ -99,3 +99,11 @@ header {
 .header {
     justify-content: space-around;
 }
+
+/*@media (min-width: 320px) {*/
+    /*.nav-menu {*/
+        /*width: 100%;*/
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+    /*}*/
+/*}*/
