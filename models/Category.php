@@ -23,4 +23,9 @@ class Category extends ActiveRecord
         return Category::find()->asArray()->all();
     }
 
+    public function getCategoryTitle($id) //Название категории
+    {
+        return Category::find()->where(['cat_name' => $id])->one();
+    }
+
 }

@@ -100,10 +100,73 @@ header {
     justify-content: space-around;
 }
 
-/*@media (min-width: 320px) {*/
-    /*.nav-menu {*/
-        /*width: 100%;*/
-        /*display: flex;*/
-        /*justify-content: space-between;*/
-    /*}*/
-/*}*/
+@media (min-width: 320px) {
+    header {
+        height: 150px;
+    }
+    .nav-menu {
+        width: 100%;
+    }
+    .nav-menu a:first-child {
+        width: 100%;
+    }
+    .nav-menu a {
+        padding: 2px 4px;
+    }
+    .header {
+        justify-content: center;
+        flex-direction: column;
+        height: 150px;
+    }
+
+    .header a {
+        margin: 2px 0;
+    }
+}
+
+@media (min-width: 576px) {
+    header {
+        height: 50px;
+    }
+    .header {
+        justify-content: space-between;
+        flex-direction: row;
+        height: 50px;
+    }
+    .header a {
+        margin: auto;
+    }
+    .nav-menu {
+        width: 500px;
+    }
+    .nav-menu a:first-child {
+        width: auto;
+    }
+    .nav-menu a {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        justify-content: space-around;
+    }
+    .product {
+        height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 992px) {
+    .product {
+        height: 360px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .product {
+        height: 370px;
+    }
+}
