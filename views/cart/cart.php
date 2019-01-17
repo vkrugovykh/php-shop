@@ -20,7 +20,7 @@
         <td style="vertical-align: middle"><?= $good['name'] ?></td>
         <td style="vertical-align: middle"><?= $good['goodQuantity'] ?></td>
         <td style="vertical-align: middle"><?= $good['price'] * $good['goodQuantity'] ?></td>
-        <td class="delete" style="text-align: center; cursor: pointer; vertical-align: middle; color: red"><span>&#10006;</span></td>
+        <td class="delete" data-id="<?= $id ?>" style="text-align: center; cursor: pointer; vertical-align: middle; color: red"><span>&#10006;</span></td>
     </tr>
     <? } ?>
     <tr style="border-top: 4px solid black">
@@ -34,8 +34,8 @@
     </tbody>
 </table>
 <div class="modal-buttons" style="display: flex; padding: 15px; justify-content: space-around">
-    <button type="button" class="btn btn-danger"">Очистить корзину</button>
-    <button type=" button" class="btn btn-secondary">Продолжить покупки</button>
+    <button type="button" class="btn btn-danger" onclick="clearCart(event)">Очистить корзину</button>
+    <button type=" button" class="btn btn-secondary btn-close">Продолжить покупки</button>
     <button type="button" class="btn btn-success btn-next">Оформить заказ</button>
 </div>
 
@@ -43,7 +43,7 @@
         <div class="container">
             <h3>В вашей корзине ничего нет :( </h3>
             <div class="modal-buttons" style="display: flex; padding: 15px; justify-content: space-around">
-                <button type=" button" class="btn btn-success btn-next">Начать покупки</button>
+                <button type=" button" class="btn btn-success btn-close">Начать покупки</button>
             </div>
         </div>
 <? }
