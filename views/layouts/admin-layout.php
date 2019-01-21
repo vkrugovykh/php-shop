@@ -8,10 +8,10 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+use app\assets\AdminAppAsset;
 use yii\helpers\Url;
 
-AppAsset::register($this);
+AdminAppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -32,15 +32,15 @@ AppAsset::register($this);
         <div class="container">
             <div class="header">
                 <a href="/">На главную</a>
-                <? if (!Yii::$app->user->isGuest) {?>
-                    <a href="/admin/">Админка</a>
+
+                <? if (!Yii::$app->user->isGuest && Url::current() == '/admin/login') {
+                    Yii::$app->response->redirect(Url::to('/admin/'));
+                 } ?>
+
+                <? if (Url::current() != '/admin/login') { ?>
+                    <a href="/admin/logout/">Выход из админки</a>
                 <? } ?>
-                <? if (Yii::$app->user->isGuest) {?>
-                    <a href="/admin/login/">Вход в админку</a>
-                <? } else { ?>
-                    <a href="/admin/logout/" data-method="post">Выход из админки</a>
-                <? } ?>
-                <a href="#" onclick="openCart(event)">Корзина <span class="menu-quantity">(<?= $_SESSION['cart.totalQuantity'] ? $_SESSION['cart.totalQuantity'] : 0 ?>)</span></a>
+<!--                <a href="#" onclick="openCart(event)">Корзина <span class="menu-quantity">(--><?//= $_SESSION['cart.totalQuantity'] ? $_SESSION['cart.totalQuantity'] : 0 ?><!--)</span></a>-->
                 <form action="<?= Url::to(['category/search']) ?>" method="get">
                     <input type="text" style="padding: 5px" placeholder="Поиск..." name="search">
                 </form>
@@ -60,21 +60,6 @@ AppAsset::register($this);
         </div>
     </footer>
 </section>
-
-<div id="cart" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-        </div>
-    </div>
-</div>
-
-<div id="order" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-
-        </div>
-    </div>
-</div>
 
 <?php $this->endBody() ?>
 </body>

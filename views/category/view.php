@@ -4,7 +4,7 @@
     $this->title = 'PHP Shop | ' . $title['browser_name'];
 ?>
 
-<div class="container">
+<!--<div class="container">-->
     <div class="row justify-content-center">
 
         <? foreach ($goods as $good) {?>
@@ -24,4 +24,4 @@
             </div>
         <? } ?>
     </div>
-</div>
+<!--</div>-->

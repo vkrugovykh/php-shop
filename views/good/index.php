@@ -1,6 +1,9 @@
-<? $this->title = 'PHP Shop | ' . $good['name']; ?>
+<?
+use yii\helpers\Html;
+$this->title = 'PHP Shop | ' . $good['name'];
+?>
 
-<div class="container">
+<!--<div class="container">-->
     <div class="row justify-content-md-center">
 
         <div class="col-12 col-md-8 justify-self-center">
@@ -15,8 +18,9 @@
                 <div class="product-price">Цена: <?= $good['price'] ?> рублей</div>
                 <div class="product-buttons">
                     <a href="#" data-name="<?= $good['link_name'] ?>" class="product-button__add btn btn-success">Заказать</a>
+                    <?= Html::a('Назад', Yii::$app->request->referrer, ['class' => 'btn btn-primary']) ?>
                 </div>
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->

@@ -1,7 +1,7 @@
 <?
     use yii\widgets\ActiveForm;
 ?>
-<div class="container">
+<!--<div class="container">-->
 
     <h2 style="padding: 10px; text-align: center">Оформление заказа</h2>
 
@@ -18,4 +18,4 @@
 
     <? $form = ActiveForm::end() ?>
 
-</div>
+<!--</div>-->

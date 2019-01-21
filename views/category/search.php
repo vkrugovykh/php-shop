@@ -3,7 +3,7 @@
     $this->title = 'PHP Shop - Результаты поиска по запросу ' . $search;
 ?>
 
-<div class="container">
+<!--<div class="container">-->
 
     <h2 style="text-align: center">Результаты поиска по запросу <?= $search ?></h2>
     <div class="row justify-content-center">
@@ -27,4 +27,4 @@
             <h4>Ничего не найдено :(</h4>
         <? } ?>
     </div>
-</div>
+<!--</div>-->

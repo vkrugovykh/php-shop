@@ -4,7 +4,7 @@
     $this->title = 'PHP Shop - интернет магазин';
 ?>
 
-<div class="container">
+<!--<div class="container">-->
     <div class="row">
 
         <? foreach ($goods as $good) {?>
@@ -24,4 +24,4 @@
         </div>
         <? } ?>
     </div>
-</div>
+<!--</div>-->
